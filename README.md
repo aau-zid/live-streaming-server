@@ -24,7 +24,7 @@ The server receives an RTMP stream and transcode it in
 
 
 
-###Send stream to server
+### Send stream to server
 rtmp://HOST/stream/STREAMING_KEY
 
 ### Receiving stream from server
