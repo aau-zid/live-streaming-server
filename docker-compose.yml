@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  live-streaming-server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+      - "1935:1935"
+    environment: 
+        - STREAMING_SERVER_DOMAIN=SERVER_HOST
+        - STREAMING_SERVER_EMAIL=EMAIL_FOR_CERTIFICATES
+        - ENABLE_SSL_CERTBOT=false
+    volumes:
+      - ./nginx-letsencrypt:/etc/letsencrypt

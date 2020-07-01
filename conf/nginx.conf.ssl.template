@@ -1,0 +1,24 @@
+
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 24h;
+    ssl_session_tickets off;
+    ssl_prefer_server_ciphers on;
+    ssl_protocols TLSv1.2;
+    ssl_ciphers EECDH+CHACHA20:EECDH+AES;
+    ssl_ecdh_curve X25519:prime256v1:secp521r1:secp384r1;
+
+    ssl_certificate /etc/letsencrypt/live/${STREAMING_SERVER_DOMAIN}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/${STREAMING_SERVER_DOMAIN}/privkey.pem;
+
+    server {
+        listen      80;
+        server_name ${STREAMING_SERVER_DOMAIN};
+
+        return 301 https://${STREAMING_SERVER_DOMAIN}${DOLLAR}request_uri;
+    }
+
+    server {
+        listen 443 ssl;
+        server_name ${STREAMING_SERVER_DOMAIN};
+        
+      
