@@ -31,6 +31,6 @@ rtmp://HOST/stream/STREAMING_KEY
 https://HOST/live/STREAMING_KEY.m3u8 - Contains all streaming resolutions
 
 #### Get only on resolution
-https://HOST/live/STREAMING_KEY_480/index.m3u8
-https://HOST/live/STREAMING_KEY_720/index.m3u8
-https://HOST/live/STREAMING_KEY_1080/index.m3u8
+* https://HOST/live/STREAMING_KEY_480/index.m3u8
+* https://HOST/live/STREAMING_KEY_720/index.m3u8
+* https://HOST/live/STREAMING_KEY_1080/index.m3u8
