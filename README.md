@@ -3,17 +3,17 @@ Live Streaming Server based on NGINX and NGINX-RMTP-Module
 
 *License:*   [GNU GPL v3 or later](http://www.gnu.org/copyleft/gpl.html)
 
-##Docker Compose Environments
+## Docker Compose Environments
 * ENABLE_SSL_CERTBOT - if set to "true" Certbot will be run to generate certificates (Default: false)
 * STREAMING_SERVER_EMAIL - Email for generating certificates 
 * STREAMING_SERVER_DOMAIN - Domain of the certificates (Default: _)
 
-##Cerbot
+## Cerbot
 Command: certbot certonly --standalone -d $STREAMING_SERVER_DOMAIN --email $STREAMING_SERVER_EMAIL -n --agree-tos --expand --deploy-hook "nginx -s reload"
 
 --deploy-hook "nginx -s reload": reloads NGINX if a new certificate is generated
 
-##Streaming
+## Streaming
 
 The server receives an RTMP stream and transcode it in
  
@@ -27,7 +27,7 @@ The server receives an RTMP stream and transcode it in
 ###Send stream to server
 rtmp://HOST/stream/STREAMING_KEY
 
-###Receiving stream from server
+### Receiving stream from server
 https://HOST/live/STREAMING_KEY.m3u8 - Contains all streaming resolutions
 
 #### Get only on resolution
